@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>레이아웃 유형01</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #body {
+        background-color: #fff3e0;
+      }
+      #wrap {
+        width: 1200px;
+        margin: 0 auto; /*위 오른 아래 왼*/
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "nav nav"
+          "aside section"
+          "footer footer"; /*테이블 모양으로 8개가 있다고 생각하면 좋음.*/
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 100px 100px 780px 100px;
+      }
+      #header {
+        background-color: #ffe0b2;
+        grid-area: header;
+      }
+      #nav {
+        background-color: #ffcc80;
+        grid-area: nav;
+      }
+      #aside {
+        background-color: #ffb74d;
+        grid-area: aside;
+      }
+      #section {
+        background-color: #ffa726;
+        grid-area: section;
+      }
+      #footer {
+        background-color: #ff9800;
+        grid-area: footer;
+      }
+      @media (max-width: 1300px) {
+        #wrap {
+          width: 96%;
+        }
+      }
+      @media (max-width: 768px) {
+        #wrap {
+          width: 100%;
+        }
+      }
+      @media (max-width: 480px) {
+        #wrap {
+          grid-template-areas:
+            "header"
+            "nav"
+            "aside"
+            "section"
+            "footer"; /*테이블 모양으로 8개가 있다고 생각하면 좋음.*/
+          grid-template-columns: 100%;
+          grid-template-rows: 100px 100px 300px 480px 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <header id="header"></header>
+      <nav id="nav"></nav>
+      <aside id="aside"></aside>
+      <section id="section"></section>
+      <footer id="footer"></footer>
+    </div>
+
+    <!-- 
+        layout01_01 : float 방식 레이아웃 -> 옛날 방식 : float은 원래 글씨를 정렬하려고 쓰던 건데,
+          레이아웃을 정렬할 때 쓸게 없어서 옛날에 이걸 썼엇음.
+        layout01_02 : float 방식 반응형 레이아웃
+        layout01_03 : flex 방식 레이아웃 -> 간단한 구조를 짤 때 유용함. 간단한 설정만으로 빠르게 짤 수 있으니까.
+        layout01_04 : flex 방식 반응형 레이아웃
+        layout01_05 : Grid 방식 레이아웃 -> 복잡한 구조를 짤 때 유용함. wrap에서 한번에 조정하면 되니까.
+        layout01_06 : Grid 방식 반응형 레이아웃 
+    -->
+  </body>
+</html>
