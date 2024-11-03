@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>레이아웃 유형 03</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #body {
+        background-color: #e1f5fe;
+      }
+      #wrap {
+        width: 1200px;
+        margin: 0 auto;
+      }
+      #header {
+        height: 100px;
+        background-color: #b3e5fc;
+      }
+      #nav {
+        height: 100px;
+        background-color: #81d4fa;
+      }
+      #main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 780px;
+      }
+      #aside {
+        width: 30%;
+        height: 780px;
+        background-color: #4fc3f7;
+      }
+      #article1 {
+        width: 70%;
+        height: 260px;
+        background-color: #29b6f6;
+      }
+      #article2 {
+        width: 70%;
+        height: 260px;
+        background-color: #03a9f4;
+      }
+      #article3 {
+        width: 70%;
+        height: 260px;
+        background-color: #039be5;
+      }
+      #footer {
+        height: 100px;
+        background-color: #0288d1;
+      }
+
+      @media (max-width: 1300px) {
+      }
+      @media (max-width: 780px) {
+      }
+      @media (max-width: 480px) {
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <header id="header"></header>
+      <nav id="nav"></nav>
+      <main id="main" class="clearfix">
+        <aside id="aside"></aside>
+        <article id="article1"></article>
+
+        <article id="article2"></article>
+        <article id="article3"></article>
+      </main>
+      <div id="footer"></div>
+    </div>
+    <!-- 
+        layout03_01 : float 방식 레이아웃 -> 옛날 방식 : float은 원래 글씨를 정렬하려고 쓰던 건데,
+          레이아웃을 정렬할 때 쓸게 없어서 옛날에 이걸 썼엇음.
+        layout03_02 : float 방식 반응형 레이아웃
+        layout03_03 : flex 방식 레이아웃 -> 간단한 구조를 짤 때 유용함. 간단한 설정만으로 빠르게 짤 수 있으니까.
+        layout03_04 : flex 방식 반응형 레이아웃
+        layout03_05 : Grid 방식 레이아웃 -> 복잡한 구조를 짤 때 유용함. wrap에서 한번에 조정하면 되니까.
+        layout03_06 : Grid 방식 반응형 레이아웃 
+    -->
+  </body>
+</html>
