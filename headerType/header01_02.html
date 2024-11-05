@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>헤더 유형 01</title>
+    <style>
+      /*fonts*/
+      @font-face {
+        font-family: "NEXON Lv1 Gothic OTF";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff")
+          format("woff");
+      }
+
+      .nexon {
+        font-family: "NEXON Lv1 Gothic OTF";
+      }
+      /* reset */
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      em {
+        font-style: normal;
+      }
+      /* Header Type */
+
+      #headerTyoe {
+      }
+      .header__wrap {
+      }
+      .header__inner {
+        height: 70px;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /*양쪽 정렬*/
+        padding: 0 20px;
+      }
+      .header__logo {
+        font-size: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .header__logo em {
+        font-size: 18px;
+        font-weight: 400;
+      }
+      .header__menu {
+      }
+      .header__member {
+      }
+    </style>
+  </head>
+  <body>
+    <header id="headerTyoe" class="header__wrap nexon">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#">web <em>site</em></a>
+        </div>
+        <div class="header__menu"></div>
+        <div class="header__member">헤더 메뉴</div>
+      </div>
+    </header>
+  </body>
+</html>

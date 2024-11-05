@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>헤더 유형 01</title>
+    <style>
+      /*fonts*/
+      @font-face {
+        font-family: "NEXON Lv1 Gothic OTF";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff")
+          format("woff");
+        font-weight: 400;
+      }
+
+      .nexon {
+        font-family: "NEXON Lv1 Gothic OTF";
+      }
+      /* reset */
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      li {
+        list-style: none;
+      }
+      em {
+        font-style: normal;
+      }
+      /* Header Type */
+
+      #headerTyoe {
+      }
+      .header__wrap {
+      }
+      .header__inner {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /*양쪽 정렬*/
+        padding: 0 20px;
+        border-bottom: 1px solid #ccc;
+      }
+      .header__logo {
+        font-size: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: #111;
+      }
+      .header__logo em {
+        font-size: 18px;
+        font-weight: 400;
+      }
+      .header__menu {
+        background: #555;
+      }
+      .header__menu li {
+        display: inline;
+      }
+      .header__menu li a {
+        padding: 13px 30px;
+        margin: 0 5px;
+        transition: background-color 0.33s; /*애니메이션 효과를 넣는 것이라고 보면 됨.*/
+      }
+      .header__menu li a:hover {
+        background-color: #f1f1f1;
+        border-radius: 5px;
+      }
+      .header__member {
+        background: #999;
+      }
+      .header__member a {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="headerTyoe" class="header__wrap nexon">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#">web <em>site</em></a>
+        </div>
+        <nav class="header__menu">
+          <ul>
+            <li><a href="#">헤더 영역</a></li>
+            <li><a href="#">슬라이드 영역</a></li>
+            <li><a href="#">배너 영역</a></li>
+            <li><a href="#">컨텐츠 영역</a></li>
+            <li><a href="#">푸터 영역</a></li>
+          </ul>
+          <!-- ul>li*5>a[href="#"] 해당 emmet 코드 -->
+        </nav>
+        <div class="header__member">
+          <a href="#"> 로그인 </a>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
