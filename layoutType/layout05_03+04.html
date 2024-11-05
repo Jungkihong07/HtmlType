@@ -9,7 +9,6 @@
         margin: 0;
         padding: 0;
       }
-
       #header {
         height: 100px;
         background-color: #eeebe9;
@@ -33,67 +32,97 @@
         background-color: rgba(0, 0, 0, 0.1);
       }
       .contents {
-        display: grid;
-        grid-template-areas:
-          "cont1 cont1"
-          "cont2 cont2"
-          "cont3 cont4";
-        grid-template-rows: 100px 200px 480px;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
       }
-
+      .contents .left {
+        width: 100%;
+        height: 100px;
+      }
+      .contents .right {
+        width: 100%;
+        height: 680px;
+        display: flex;
+        flex-wrap: wrap;
+      }
       .contents .cont1 {
         /*contents의 자식으로 있는 cont1에 적용한다는 의미이다.*/
+        height: inherit;
         background-color: #74574a;
-        grid-area: cont1;
       }
       .contents .cont2 {
+        width: 100%;
+        height: 200px;
         background-color: #684d43;
-        grid-area: cont2;
       }
       .contents .cont3 {
+        width: 50%;
+        height: 480px;
         background-color: #594139;
-        grid-area: cont3;
+        float: left;
       }
       .contents .cont4 {
+        width: 50%;
+        height: 480px;
         background-color: #4a352f;
-        grid-area: cont4;
+        float: left;
       }
 
       @media (max-width: 1300px) {
         .container {
           width: 96%;
         }
-        .contents {
-          grid-template-areas:
-            "cont1 cont2 cont2"
-            "cont1 cont3 cont4";
-          grid-template-rows: repeat(2, 1fr);
-          grid-template-columns: repeat(3, 1fr);
+        .contents .left {
+          width: 30%;
+          height: 780px;
+        }
+        .contents .right {
+          width: 70%;
+          height: 780px;
+        }
+        .contents .cont2 {
+          height: 390px;
+        }
+        .contents .cont3 {
+          height: 390px;
+        }
+        .contents .cont4 {
+          height: 390px;
         }
       }
       @media (max-width: 768px) {
         .container {
           width: 100%;
         }
-        .contents {
-          grid-template-areas:
-            "cont1 cont2 "
-            "cont1 cont3 "
-            "cont1 cont4 ";
-          grid-template-rows: repeat(3, 1fr);
-          grid-template-columns: 30% 70%;
+        .contents .cont2 {
+          height: 260px;
+        }
+        .contents .cont3 {
+          width: 100%;
+          height: 260px;
+        }
+        .contents .cont4 {
+          width: 100%;
+          height: 260px;
         }
       }
       @media (max-width: 480px) {
-        .contents {
-          grid-template-areas:
-            "cont1"
-            "cont2"
-            "cont3"
-            "cont4";
-          grid-template-rows: 150px 210px 210px 210px;
-          grid-template-columns: 100%;
+        .contents .left {
+          width: 100%;
+          height: 150px;
+        }
+        .contents .right {
+          width: 100%;
+          height: 630px;
+        }
+        .contents .cont2 {
+          height: 210px;
+        }
+        .contents .cont3 {
+          height: 210px;
+        }
+        .contents .cont4 {
+          height: 210px;
         }
       }
     </style>
@@ -109,10 +138,14 @@
       </nav>
       <section id="main">
         <div class="contents container clearfix">
-          <div class="cont1"></div>
-          <div class="cont2"></div>
-          <div class="cont3"></div>
-          <div class="cont4"></div>
+          <div class="left">
+            <div class="cont1"></div>
+          </div>
+          <div class="right">
+            <div class="cont2"></div>
+            <div class="cont3"></div>
+            <div class="cont4"></div>
+          </div>
         </div>
       </section>
       <footer id="footer">
